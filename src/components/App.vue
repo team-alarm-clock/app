@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    
+    {{result}}
     <RouterView></RouterView>
     
   </div>
 </template>
 
 <script>
-
+import api from '../services/api.js';
 
 export default {
-  name: 'app',
-  components: {
-    
+  data() {
+    return {
+      result: null
+    };
+  },
+
+  created() {
+    api.test()
+      .then(result => this.result = result);
   }
 };
 </script>

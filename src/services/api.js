@@ -1,5 +1,6 @@
 
 export default {
+
   getArtists() {
     return fetch(`https://api.discogs.com/database/search?q=the+clash`,  {
       method: "GET",

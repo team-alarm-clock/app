@@ -1,7 +1,8 @@
-##Communication Plan
+#Communication Plan
 
 
-*Morning meetup - agile process. Use trello to organize tasks. Implement the 15 minute rule to ask for help. Talk on slack channel to keep everybody in the loop. Have a mid-day check-in before lunch and a check-in before we start again. Advocate for each other, and check in with how we’re feeling.
+##Morning meetup - agile process. 
+*Use trello to organize tasks. Implement the 15 minute rule to ask for help. Talk on slack channel to keep everybody in the loop. Have a mid-day check-in before lunch and a check-in before we start again. Advocate for each other, and check in with how we’re feeling.
 
 *Come in Monday with as specific wireframe functionality as possible. 
 
@@ -20,8 +21,9 @@
 ##WorkFlow Process
 
 *Plan for tasks to be accomplished for the day.
-At the end of the day, list tasks that have been accomplished.
-Plan 
+*At the end of the day, mark tasks that have been accomplished and plan/identify next tasks for following day.  *Add new tasks as necessary.
+*Identify any issues/problems or stoppers and brainstorm solutions/options
+*Make adjustments as appropriate.
 
 
 ##Git Process

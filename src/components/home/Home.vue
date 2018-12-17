@@ -1,7 +1,7 @@
 <template>
     <section>
         <h2>THIS IS THE HOME PAGE</h2>
-        {{result}}
+        {{search.results[0].title}}
     </section>
 </template>
 
@@ -10,12 +10,13 @@ import api from '../../services/api.js';
 export default {
   data() {
     return {
-      result: null
+      search: []
+      
     };
   },
   created() {
     api.getArtists()
-      .then(result => this.result = result);
+      .then(result => this.search = result);
   }
 
 };

@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+    <Header />
     <RouterView></RouterView>
-    
   </div>
 </template>
 
 <script>
-
+import Header from './shared/Header';
 export default {
+  components: {
+    Header
+  },
   data() {
     return {
       result: null

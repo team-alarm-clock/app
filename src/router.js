@@ -10,9 +10,9 @@ export default new VueRouter({
 
   routes: [
     { path: '/', component: Home },
-    { path: '/artists', component: Artists },
-    { path: '/profiles', component: Profiles },
-    { path: '/about', component: About },
+    { path: '/artist-detail', component: Artists },
+    { path: '/profile', component: Profiles },
+    { path: '/about-us', component: About },
     { path: '/search', component: Search },
     { path: '*', redirect: '/' }
   ]

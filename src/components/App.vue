@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    {{result}}
     <RouterView></RouterView>
     
   </div>
 </template>
 
 <script>
-import api from '../services/api.js';
 
 export default {
   data() {
@@ -15,11 +13,6 @@ export default {
       result: null
     };
   },
-
-  created() {
-    api.test()
-      .then(result => this.result = result);
-  }
 };
 </script>
 

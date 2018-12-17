@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img alt="logo" src="x">
+    <RouterView></RouterView>
     
   </div>
 </template>
@@ -13,7 +14,7 @@ export default {
   components: {
     
   }
-}
+};
 </script>
 
 <style>

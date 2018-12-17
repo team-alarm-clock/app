@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="logo" src="x">
+    
     <RouterView></RouterView>
     
   </div>

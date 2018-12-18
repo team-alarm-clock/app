@@ -1,8 +1,8 @@
 
 export default {
 
-  getArtists() {
-    return fetch('https://api.discogs.com/database/search?q=the+clash', {
+  getArtists(searchTerm) {
+    return fetch(`https://api.discogs.com/database/search?q=${encodeURIComponent(searchTerm)}`, {
       method: 'GET',
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'

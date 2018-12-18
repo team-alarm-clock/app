@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
    <header>
      <span  v-if="user">
        <h2>Hello {{user.username}} </h2>
@@ -26,13 +27,25 @@
 import api from '../services/api.js';
 import Auth from './auth/Auth';
 
+    <Header />
+    <RouterView></RouterView>
+  </div>
+</template>
+
+<script>
+import Header from './shared/Header';
+
 export default {
+  components: {
+    Header
+  },
   data() {
     return {
       result: null,
       user: null
     };
   },
+
   components: {
     Auth
   },
@@ -74,6 +87,7 @@ export default {
       this.$router.push('/');
     }
   }
+
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <Header></Header>
    <header>
      <span  v-if="user">
        <h2>Hello {{user.username}} </h2>
@@ -23,21 +23,16 @@
    </div>
 </template>
 
-<script>
-import api from '../services/api.js';
-import Auth from './auth/Auth';
-
-    <Header />
-    <RouterView></RouterView>
-  </div>
-</template>
 
 <script>
 import Header from './shared/Header';
+import api from '../services/api.js';
+import Auth from './auth/Auth';
 
 export default {
   components: {
-    Header
+    Header,
+    Auth
   },
   data() {
     return {
@@ -46,9 +41,6 @@ export default {
     };
   },
 
-  components: {
-    Auth
-  },
   created() {
     const json = window.localStorage.getItem('profile');
     if(json) {

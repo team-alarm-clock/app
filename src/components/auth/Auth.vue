@@ -7,12 +7,12 @@
             </p>
             <CredentialsForm prompt="Sign In" :onSubmit="handleSignIn" />
         </div>
-        <div v-else>
+        <div v-if="method === 'signup'">
             <h2>SIGN UP</h2>
             <p>ALREADY HAVE AN ACCOUNT?
                 <button @click="method = 'signin'">SIGN UP</button>
             </p> 
-            <form @submit.prevent="handleSignUpSubmit(profile)">
+            <form @submit.prevent="handleSignUp(profile)">
              <h3>REGISTER</h3>
             <label>
                 FIRST NAME:
@@ -53,6 +53,13 @@ export default {
   },
   data() {
     return {
+      profile: {
+        username: '',
+        password: '',
+        first: '',
+        last: '',
+        email: ''
+      },
       method: 'signin', 
       error: ''
     };

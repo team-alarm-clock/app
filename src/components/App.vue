@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Header></Header>
    <header>
      <span  v-if="user">
        <h2>Hello {{user.username}} </h2>
@@ -23,30 +22,26 @@
    </div>
 </template>
 
-
 <script>
-import Header from './shared/Header';
 import api from '../services/api.js';
 import Auth from './auth/Auth';
 
 export default {
-  components: {
-    Header,
-    Auth
-  },
   data() {
     return {
       result: null,
       user: null
     };
   },
-
+  components: {
+    Auth
+  },
   created() {
     const json = window.localStorage.getItem('profile');
     if(json) {
       this.setUser(JSON.parse(json));
-      api.test()
-        .then(result => this.result = result);
+    // api.test()
+    //   .then(result => this.result = result);
     }
   },
   methods: {
@@ -79,7 +74,6 @@ export default {
       this.$router.push('/');
     }
   }
-
 };
 </script>
 

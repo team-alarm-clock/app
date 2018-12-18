@@ -8,8 +8,8 @@ export default {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
     }
-  )
-    .then(response => response.json()); 
+    )
+      .then(response => response.json()); 
   }
 };
 

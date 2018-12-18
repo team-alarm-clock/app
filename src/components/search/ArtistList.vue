@@ -1,8 +1,9 @@
 <template>
   <section>
-      <li v-for="result in results.results"
-          :key="result.id">
-          {{result.title}}
+      <li v-for="artist in artists"
+          :key="artist.id">
+          {{artist.title !== "Undefined" ? artist.title : "no title"}}
+          {{artist.id}}
       </li>
   </section>
 </template>
@@ -10,7 +11,7 @@
 <script>
 export default {
   props: {
-    results: null
+    artists: null
   }
 };
 </script>

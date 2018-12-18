@@ -4,8 +4,8 @@
             <input v-model="keyword">
             <button>Search</button>
         </form>
-        <ul >
-            <ArtistList :results="results" />
+        <ul v-if="artists">
+            <ArtistList :artists="artists" />
         </ul>
     </section>
 </template>
@@ -24,7 +24,8 @@ export default {
   data() {
     return {
       keyword: this.search || '',
-      results: []
+      artists: [],
+      search: decodeURIComponent(this.$route.query.search)
     };
   },
   watch: {
@@ -32,12 +33,16 @@ export default {
       if(this.keyword !== newSearch) {
         this.keyword = newSearch;
       }
+    },
+    $route(newRoute, oldRoute) {
+      const newSearch = newRoute.query.search;
+      const oldSearch = oldRoute.query.search;
+      if(newSearch === oldSearch) return;
+      this.search = decodeURIComponent(newSearch);
+      this.searchArtist();
     }
   },
-  created() {
-    api.getArtists()
-      .then(result => this.results = result);
-  },
+
   methods: {
     handleSubmit() {
       this.$router.push({
@@ -45,6 +50,16 @@ export default {
           search: encodeURIComponent(this.keyword)
         }
       });
+      this.searchArtist();
+    },
+    searchArtist() {
+      api.getArtists(this.search)
+        .then(artists => {
+          this.artists = artists.results;
+          console.log('here', this.artists);
+        }).catch(err => {
+          console.log(err);
+        });
     }
   }
 };

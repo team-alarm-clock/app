@@ -62,7 +62,7 @@ p {
 h3 {
     text-align: center;
     }    
-.signup {}
+
 
 input {
    display: block;

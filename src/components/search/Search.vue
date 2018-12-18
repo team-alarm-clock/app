@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log('banana');
       this.onSearch(this.keyword);
       this.$router.push({
         query: {

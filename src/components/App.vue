@@ -1,25 +1,21 @@
 <template>
   <div id="app">
-    {{result}}
+    <Header />
     <RouterView></RouterView>
-    
   </div>
 </template>
 
 <script>
-import api from '../services/api.js';
-
+import Header from './shared/Header';
 export default {
+  components: {
+    Header
+  },
   data() {
     return {
       result: null
     };
   },
-
-  created() {
-    api.test()
-      .then(result => this.result = result);
-  }
 };
 </script>
 

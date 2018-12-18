@@ -1,18 +1,14 @@
 <template>
   <div id="app">
    <header>
-     <span  v-if="user">
-       <h2>Hello {{user.username}} </h2>
-      </span>
      <nav v-if="user">
-        <RouterLink to="/">HOME</RouterLink>
-        <RouterLink to="/artists">ARTISTS</RouterLink>
-        <RouterLink to="/profiles">MY PROFILE</RouterLink>
-        <RouterLink to="/about">ABOUT</RouterLink>
-        <a href="#" @click="handleLogout">LOGOUT</a>
+        <Header />
+        <p id="logout"><a href="#" @click="handleLogout">LOGOUT</a></p>
      </nav>
-    </header>
-    <!-- {{result}} -->
+     <span  v-if="user">
+       <h2>Hello, {{user.username}}! </h2>
+    </span>
+   </header>
     <main>
         <RouterView v-if="user" :user="user" />
             <Auth v-else
@@ -25,7 +21,7 @@
 <script>
 import api from '../services/api.js';
 import Auth from './auth/Auth';
-
+import Header from './shared/Header';
 export default {
   data() {
     return {
@@ -34,7 +30,8 @@ export default {
     };
   },
   components: {
-    Auth
+    Auth,
+    Header
   },
   created() {
     const json = window.localStorage.getItem('profile');
@@ -44,19 +41,24 @@ export default {
     //   .then(result => this.result = result);
     }
   },
+
   methods: {
     handleSignUp(profile) {
       return api.signUp(profile)
         .then(user => {
           this.setUser(user);
+          this.$router.push('/home');
         });
     },
+
     handleSignIn(credentials) {
       return api.signIn(credentials)
         .then(user => {
           this.setUser(user);
+          this.$router.push('/home');
         });
     },
+
     setUser(user) {
       this.user = user;
       if(user) {
@@ -68,6 +70,7 @@ export default {
         window.localStorage.removeItem('profile');
       }
     },
+
     handleLogout() {
       // TODO: tell api to forget token
       this.setUser(null);
@@ -86,4 +89,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+#logout { 
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: lightseagreen;
+}
+
 </style>

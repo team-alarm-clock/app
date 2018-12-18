@@ -1,16 +1,13 @@
 <template>
   <div id="app">
    <header>
-     <span  v-if="user">
-       <h2>Hello {{user.username}} </h2>
-      </span>
      <nav v-if="user">
         <Header />
         <p id="logout"><a href="#" @click="handleLogout">LOGOUT</a></p>
      </nav>
      <span  v-if="user">
        <h2>Hello, {{user.username}}! </h2>
-      </span>
+    </span>
    </header>
     <main>
         <RouterView v-if="user" :user="user" />
@@ -24,7 +21,7 @@
 <script>
 import api from '../services/api.js';
 import Auth from './auth/Auth';
-
+import Header from './shared/Header';
 export default {
   data() {
     return {
@@ -33,7 +30,8 @@ export default {
     };
   },
   components: {
-    Auth
+    Auth,
+    Header
   },
   created() {
     const json = window.localStorage.getItem('profile');
@@ -95,5 +93,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
+  background: lightseagreen;
 }
+
 </style>

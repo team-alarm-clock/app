@@ -13,8 +13,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 header {
+    background: blanchedalmond;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
 }

@@ -8,7 +8,7 @@
         </label>
         <label>
             PASSWORD:
-            <input type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
+            <input :type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
         </label>
         <label>
             <button type="button" @clicl="showPassword = !showPassword">

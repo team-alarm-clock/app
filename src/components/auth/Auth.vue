@@ -1,15 +1,21 @@
 <template>
-    <div class="signup" v-else>
-        <h3>SIGN UP</h3>
-        <p>ALREADY HAVE AN ACCOUNT?
-            
-            <button @click="method = 'signin'">SIGN IN</button>
-            
-        </p>
-        <form @submit.prevent="handleSignUpSubmit(profile)">
-            <h3>REGISTER</h3>
+    <section>
+        <div v-if="method === 'signin'">
+            <h2>SIGN IN</h2>
+            <p>NEED TO REGISTER?
+                <button @click="method = 'signup'">SIGN UP</button>
+            </p>
+            <CredentialsForm prompt="Sign In" :onSubmit="handleSignIn" />
+        </div>
+        <div v-else>
+            <h2>SIGN UP</h2>
+            <p>ALREADY HAVE AN ACCOUNT?
+                <button @click="method = 'signin'">SIGN UP</button>
+            </p> 
+            <form @submit.prevent="handleSignUpSubmit(profile)">
+             <h3>REGISTER</h3>
             <label>
-            FIRST NAME:
+                FIRST NAME:
                 <input v-model="profile.first" v-focus required>
             </label>
             <label>
@@ -20,9 +26,9 @@
                 EMAIL:
                 <input v-model="profile.email" required>
             </label>
-                <label>
-                    USERNAME:<pre v-if="error">{{error}}</pre>
-                    <input v-model="profile.username" required>
+            <label>
+                USERNAME:<pre v-if="error">{{error}}</pre>
+                <input v-model="profile.username" required>
             </label>
             <label>
                 PASSWORD:
@@ -31,12 +37,15 @@
             <label>
                 <button>SIGN UP</button>
             </label>
-        </form>
-    </div>
-
+            </form>
+        </div>
+        <pre v-if="error">{{error}}</pre>
+    </section>
 </template>
 
 <script>
+import CredentialsForm from './CredentialsForm';
+
 export default {
   props: {
     onSignIn: Function,
@@ -45,24 +54,25 @@ export default {
   data() {
     return {
       method: 'signin', 
-      error: '',
-      profile: {
-        username: '',
-        password: ''   
-      } 
+      error: ''
     };
   },
+  components: {
+    CredentialsForm 
+  },
   methods: {
-    handleSignInSubmit() {
+    handleSignIn(profile) {
       this.error = '';
-      this.onSignIn(this.profile)
+      
+      this.onSignIn(profile)
         .catch(error => {
           this.error = error.error;
         });
     },
-    handleSignUpSubmit() {
+    handleSignUp(profile) {
       this.error = '';
-      this.onSignUp(this.profile)
+      
+      this.onSignUp(profile)
         .catch(error => {
           this.error = error.error;
         });

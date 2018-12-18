@@ -1,13 +1,13 @@
 <template>
   <div id="app">
    <section>
-     <span  v-if="user">
-       <h2>Hello, {{user.username}}! </h2>
-      </span>
      <nav v-if="user">
         <Header />
         <p id="logout"><a href="#" @click="handleLogout">LOGOUT</a></p>
      </nav>
+     <span  v-if="user">
+       <h2>Hello, {{user.username}}! </h2>
+      </span>
     </section>
 
     <main>

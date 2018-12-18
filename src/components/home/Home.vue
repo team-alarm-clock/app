@@ -19,7 +19,7 @@ export default {
 <style>
 #filler {
     width: 50vw;
-    height: 50px;
+    height: 75px;
     overflow: scroll;
     margin: auto;
 }

@@ -45,8 +45,8 @@ export default {
     const json = window.localStorage.getItem('profile');
     if(json) {
       this.setUser(JSON.parse(json));
-      api.test()
-        .then(result => this.result = result);
+      // api.test()
+      //   .then(result => this.result = result);
     }
   },
   methods: {

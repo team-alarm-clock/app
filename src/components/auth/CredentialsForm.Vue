@@ -1,24 +1,26 @@
 <template>
-    <form @submit.prevent="onSubmit(profile)">
-        <h4>SIGN INTO YOUR EXISTING ACCOUNT
-            </h4>
-        <label>
-            USERNAME:
-            <input v-model="profile.username" v-focus required>
-        </label>
-        <label>
-            PASSWORD:
-            <input :type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
-        </label>
-        <label>
-            <button type="button" @clicl="showPassword = !showPassword">
-                {{showPassword ? 'Hide' : 'Show'}}
-            </button>
-        </label>
-        <label>
-            <button>{{prompt}}</button>
-        </label>
-    </form>
+   <section>
+        <form @submit.prevent="onSubmit(profile)">
+            <h4>SIGN INTO YOUR EXISTING ACCOUNT
+                </h4>
+            <label>
+                USERNAME:
+                <input v-model="profile.username" v-focus required>
+            </label>
+            <label>
+                PASSWORD:
+                <input :type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
+            </label>
+            <label>
+                <button type="button" @clicl="showPassword = !showPassword">
+                    {{showPassword ? 'Hide' : 'Show'}}
+                </button>
+            </label>
+            <label>
+                <button>{{prompt}}</button>
+            </label>
+        </form>
+    </section>
 </template>
 
 

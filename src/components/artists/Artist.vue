@@ -17,18 +17,8 @@ export default {
     ArtistInfo
   },
   created() {
-    api.getArtistDetail(this.artist.id); 
-  },
-  methods: {
-    getDetail() {
-      api.getArtistDetail(this.artist.id)
-        .then(artist => {
-          this.artist = artist.results;
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
+    api.getArtistDetail(this.artist.id)
+      .then(result => this.artist = result); 
   }
 };
 </script>

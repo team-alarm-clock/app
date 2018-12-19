@@ -20,8 +20,6 @@ const getOptions = (method, data) => {
 
 
 export default {
-
-
   signUp(profile) {
     return fetch('/api/auth/signup', getOptions('POST', profile))
       .then(response => {
@@ -62,18 +60,38 @@ export default {
       }
     }
     )
-      .then(response => response.json()); 
+      .then(response => response.json());
   },
 
-  getAlbums(artist_id) {
-    return fetch(`https://api.discogs.com/artists/${artist_id}/releases?year,desc`, {
+
+  getArtistDetail(id) {
+    console.log(id);
+    return fetch(`https://api.discogs.com/artists/${id}`, {
       method: 'GET',
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
+
     }
     )
       .then(response => response.json());
   
   }
 };
+
+    })
+      .then(response => response.json());
+  },
+
+  getReleases(id) {
+    console.log('this is releases', id);
+    return fetch(`https://api.discogs.com/artists/${id}/releases?year,desc`, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'        
+      }
+    })
+      .then(response => response.json());
+  }
+};
+

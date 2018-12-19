@@ -8,7 +8,7 @@
         :artist="artist"
       />
     </ul>
-    <div v-if="filteredArtists">{{filteredArtist}}</div>
+    <div v-if="filteredArtist"></div>
   </section>
 </template>
 
@@ -32,18 +32,12 @@ export default {
   },
   beforeUpdate() {
     this.artists = this.filteredArtist();
-    console.log('before');
-  },
-  computed: {
-    
   },
   methods: {
     filteredArtist() {
       if(this.artists) {
         const artist = this.artists.filter(artist => artist.type === 'artist');
-        console.log('artist', artist);
         return artist ;
-        
       }
     },
     handleSearch(search) {

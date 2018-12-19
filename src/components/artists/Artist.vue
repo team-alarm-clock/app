@@ -1,7 +1,11 @@
 <template>
   <div>
     <ArtistInfo />
-    {{artist.profile}}
+    <h1>{{artist.name}}</h1>
+    <p>{{artist.realname}}</p>
+    <img :src="artist.images[0].uri" id="photo">
+    <span>{{artist.profile}}</span>
+    
 
   </div>
 </template>
@@ -16,6 +20,12 @@ export default {
   components: {
     ArtistInfo
   },
+  // computed: {
+  //   fixedProfile: function(artist) {
+  //     let banana = artist;
+  //     console.log(banana.profile.replace(/\[]\ , \<\>/g));
+  //   }
+  // },
   created() {
     api.getArtistDetail(this.artist.id)
       .then(result => this.artist = result); 
@@ -23,11 +33,15 @@ export default {
 };
 </script>
 
-<style>
-img {
-  height: 100px;
+<style scoped>
+#photo {
+  height: 200px;
+  float: left;
 }
 li {
   list-style: none;
+}
+p {
+  font-style: italic;
 }
 </style>

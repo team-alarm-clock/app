@@ -16,7 +16,7 @@ export default {
     search: String,
     onSearch: Function
   },
-  data() {
+  data() {  
     return {
       keyword: this.search || '',
     };

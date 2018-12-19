@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <ArtistInfo />
+  <div v-if="artist">
+    <li><ArtistInfo />
     <h1>{{artist.name}}</h1>
     <p>{{artist.realname}}</p>
     <img :src="artist.images[0].uri" id="photo">
-    <span>{{artist.profile}}</span>
+    <span>{{normailzedProfile}}</span>
+    </li>
     
 
   </div>
@@ -29,6 +30,12 @@ export default {
   created() {
     api.getArtistDetail(this.artist.id)
       .then(result => this.artist = result); 
+  },
+  computed:  {
+    normailzedProfile() {
+      // console.log(typeof this.artist.profile);
+      return artist.profile.replace(/\[[^]]*\]/gm, '');
+    } 
   }
 };
 </script>

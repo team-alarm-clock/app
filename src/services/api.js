@@ -72,5 +72,16 @@ export default {
       }
     })
       .then(response => response.json());
+  },
+
+  getReleases(id) {
+    console.log('this is releases', id);
+    return fetch(`https://api.discogs.com/artists/${id}/releases?year,desc`, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'        
+      }
+    })
+      .then(response => response.json());
   }
 };

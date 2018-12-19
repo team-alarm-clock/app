@@ -1,14 +1,16 @@
 <template>
   <section>
-    <h2>Search artist</h2>
-    <Search :onSearch="handleSearch" />
-    <ul v-if="artists">
-      <ArtistList v-for="artist in artists"
-        :key="artist.id"
-        :artist="artist"
-        :onSelect="handleSelect"
-      />
-    </ul>
+    <section v-if="!selected">
+      <h2>Search artist</h2>
+      <Search :onSearch="handleSearch" />
+      <ul v-if="artists">
+        <ArtistList v-for="artist in artists"
+          :key="artist.id"
+          :artist="artist"
+          :onSelect="handleSelect"
+        />
+      </ul>
+    </section>
     <RouterLink to="/artist-detail">Artist-Detail</RouterLink>
   </section>
 </template>
@@ -22,6 +24,7 @@ export default {
   data() {
     return {
       artists: null,
+      selected:null,
       search: decodeURIComponent(this.$route.query.search)
     };
   },

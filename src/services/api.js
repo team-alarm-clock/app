@@ -64,29 +64,13 @@ export default {
   },
 
   getArtistDetail(id) {
+    console.log(id);
     return fetch(`https://api.discogs.com/artists/${id}`, {
       method: 'GET',
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
-    }
-    )
+    })
       .then(response => response.json());
-  },
-
-  singIn(credentials) {
-    return fetch('/api/auth/signin', getOptions('POST', credentials))
-      .then(response => {
-        if(response.ok) {
-          return response.json();
-        }
-
-        return response.json()
-          .then(error => {
-            return Promise.reject(error);
-          });
-      });
   }
-
 };
-

@@ -1,6 +1,7 @@
 <template>
   <div>
     <ArtistInfo />
+    {{artist.profile}}
 
   </div>
 </template>
@@ -9,14 +10,15 @@
 import ArtistInfo from './ArtistInfo';
 import api from '../../services/api.js';
 export default {
-  
+  props: {
+    artist: Object
+  },
   components: {
     ArtistInfo
   },
   created() {
-    api.getArtistDetail(3310737); 
-     
-    
+    api.getArtistDetail(this.artist.id)
+      .then(result => this.artist = result); 
   }
 };
 </script>

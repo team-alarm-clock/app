@@ -66,9 +66,9 @@ export default {
           console.log(err);
         });
     },
+
     handleSelect(artist) {
       this.selected = artist;
-      console.log('clicked', this.selected.id);
     }
   },
   watch: {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ArtistInfo />
-    {{artist.id}}
+    {{artist.profile}}
 
   </div>
 </template>
@@ -18,6 +18,17 @@ export default {
   },
   created() {
     api.getArtistDetail(this.artist.id); 
+  },
+  methods: {
+    getDetail() {
+      api.getArtistDetail(this.artist.id)
+        .then(artist => {
+          this.artist = artist.results;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }
 };
 </script>

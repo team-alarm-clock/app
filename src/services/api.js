@@ -70,24 +70,8 @@ export default {
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
-    }
-    )
+    })
       .then(response => response.json());
-  },
-
-  singIn(credentials) {
-    return fetch('/api/auth/signin', getOptions('POST', credentials))
-      .then(response => {
-        if(response.ok) {
-          return response.json();
-        }
-
-        return response.json()
-          .then(error => {
-            return Promise.reject(error);
-          });
-      });
   }
-
 };
 

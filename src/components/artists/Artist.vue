@@ -6,6 +6,7 @@
     <img :src="artist.images[0].uri" id="photo">
     <span>{{artist.profile}}</span>
     
+    <span>{{this.releases.releases[0].title}}</span>
 
   </div>
 </template>
@@ -29,6 +30,8 @@ export default {
   created() {
     api.getArtistDetail(this.artist.id)
       .then(result => this.artist = result); 
+    api.getReleases(this.artist.id)
+      .then(results => this.releases = results);
   }
 };
 </script>

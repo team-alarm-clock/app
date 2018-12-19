@@ -1,5 +1,7 @@
 <template>
+
   <section v-if="releases">
+  {{releases}}
      <AlbumList :releases="releases"/>
 
      <div v-if="sortedReleases">{{sortedReleases}}</div>
@@ -13,9 +15,11 @@ import AlbumList from '../albums/AlbumList';
 export default {
   data() {
     return {
-      releases: null,
       error: null
     };
+  },
+  props: {
+    releases: Array
   },
   components: {
     AlbumList

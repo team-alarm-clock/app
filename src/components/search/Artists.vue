@@ -14,7 +14,7 @@
     </section>
 
     <section v-else>
-      <Artist />
+      <Artist :artist="selected"/>
     </section>
 
   </section>

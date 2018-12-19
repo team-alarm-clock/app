@@ -64,6 +64,7 @@ export default {
   },
 
   getArtistDetail(id) {
+    console.log(id);
     return fetch(`https://api.discogs.com/artists/${id}`, {
       method: 'GET',
       headers: {

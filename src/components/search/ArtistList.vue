@@ -1,6 +1,6 @@
 <template>
   <section>
-      <li >
+      <li v-on:click="onSelect(artist)">
           {{artist.title !== "Undefined" ? artist.title : "no title"}}
           {{artist.id}}
       </li>
@@ -11,7 +11,8 @@
 <script>
 export default {
   props: {
-    artist: null
+    artist: null,
+    onSelect: Function
   }
 };
 </script>

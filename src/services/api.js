@@ -20,8 +20,6 @@ const getOptions = (method, data) => {
 
 
 export default {
-
-
   signUp(profile) {
     return fetch('/api/auth/signup', getOptions('POST', profile))
       .then(response => {
@@ -62,7 +60,18 @@ export default {
       }
     }
     )
-      .then(response => response.json()); 
+      .then(response => response.json());
+  },
+
+  getArtistDetail(id) {
+    return fetch(`https://api.discogs.com/artists/${id}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
+      }
+    }
+    )
+      .then(response => response.json());
   },
 
   singIn(credentials) {

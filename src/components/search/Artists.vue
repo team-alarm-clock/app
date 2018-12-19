@@ -6,9 +6,10 @@
       <ArtistList v-for="artist in artists"
         :key="artist.id"
         :artist="artist"
+        :onSelect="handleSelect"
       />
     </ul>
-    <div v-if="filteredArtist"></div>
+    <RouterLink to="/artist-detail">Artist-Detail</RouterLink>
   </section>
 </template>
 
@@ -16,6 +17,7 @@
 import ArtistList from './ArtistList';
 import Search from './Search';
 import api from '../../services/api.js';
+
 export default {
   data() {
     return {
@@ -40,10 +42,12 @@ export default {
         return artist ;
       }
     },
+
     handleSearch(search) {
       this.search = search || '';
       this.searchArtist();
     },
+
     searchArtist() {
       api.getArtists(this.search)
         .then(artists => {
@@ -51,10 +55,13 @@ export default {
         }).catch(err => {
           console.log(err);
         });
+    },
+    handleSelect(artist) {
+      this.selected = artist;
+      console.log('clicked', artist);
     }
   },
   watch: {
-    
     $route(newRoute, oldRoute) {
       const newSearch = newRoute.query.search;
       const oldSearch = oldRoute.query.search;

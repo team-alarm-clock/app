@@ -1,12 +1,15 @@
 <template>
   <div>
-    
+    <ArtistInfo />
+
   </div>
 </template>
 
 <script>
+import ArtistInfo from './ArtistInfo';
 export default {
   components: {
+    ArtistInfo
   }
 };
 </script>

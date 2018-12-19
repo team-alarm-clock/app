@@ -7,9 +7,16 @@
 
 <script>
 import ArtistInfo from './ArtistInfo';
+import api from '../../services/api.js';
 export default {
+  
   components: {
     ArtistInfo
+  },
+  created() {
+    api.getArtistDetail(3310737); 
+     
+    
   }
 };
 </script>

@@ -17,7 +17,6 @@
       <Artist />
     </section>
 
-    <RouterLink to="/artist-detail">Artist-Detail</RouterLink>
   </section>
 </template>
 
@@ -69,7 +68,7 @@ export default {
     },
     handleSelect(artist) {
       this.selected = artist;
-      console.log('clicked', artist);
+      console.log('clicked', this.selected.id);
     }
   },
   watch: {

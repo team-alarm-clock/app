@@ -1,5 +1,6 @@
 <template>
   <section>
+
     <section v-if="!selected">
       <h2>Search artist</h2>
       <Search :onSearch="handleSearch" />
@@ -11,11 +12,17 @@
         />
       </ul>
     </section>
+
+    <section v-else>
+      <Artist />
+    </section>
+
     <RouterLink to="/artist-detail">Artist-Detail</RouterLink>
   </section>
 </template>
 
 <script>
+import Artist from '../artists/Artist';
 import ArtistList from './ArtistList';
 import Search from './Search';
 import api from '../../services/api.js';
@@ -30,7 +37,8 @@ export default {
   },
   components: {
     Search,
-    ArtistList
+    ArtistList,
+    Artist
   },
   created() {
     this.searchArtist();

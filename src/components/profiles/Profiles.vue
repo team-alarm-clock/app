@@ -2,11 +2,10 @@
   <div class="badges-container">
     <h2>My Badges</h2>
     <div class="badges">
-     <v-layout align-center justify-space-around>
-       <icon name="flag"></icon>
-       <v-icon>far fa-calendar-alt</v-icon>
-       <v-icon>fas fa-trophy</v-icon>
-     </v-layout>
+      <font-awesome-icon icon="fas fa-headphones-alt" />
+      <font-awesome-icon icon="far fa-calendar-alt" />
+      <font-awesome-icon icon="fas fa-trophy" />
+
     </div>
 
     <section>
@@ -18,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
 
 };

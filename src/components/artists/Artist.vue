@@ -54,7 +54,7 @@ export default {
       .then(results => {
         console.log('here', results);
         return this.releases = results.releases;
-        });
+      });
   }
 };
 </script>

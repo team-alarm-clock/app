@@ -1,6 +1,7 @@
 <template>
   <div>
-    
+    <h3>Testing fake data</h3>
+    {{releases}}
   </div>
 </template>
 

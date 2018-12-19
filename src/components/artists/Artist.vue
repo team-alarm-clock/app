@@ -1,5 +1,8 @@
 <template>
   <div>
+
+    {{releases}}
+
     <ArtistInfo />
     <h1>{{artist.name}}</h1>
     <p>{{artist.realname}}</p>
@@ -7,6 +10,7 @@
     <span>{{artist.profile}}</span>
     
     <span>{{this.releases.releases[0].title}}</span>
+
 
   </div>
 </template>

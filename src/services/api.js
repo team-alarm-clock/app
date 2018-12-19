@@ -63,6 +63,7 @@ export default {
       .then(response => response.json());
   },
 
+
   getArtistDetail(id) {
     console.log(id);
     return fetch(`https://api.discogs.com/artists/${id}`, {
@@ -70,6 +71,14 @@ export default {
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
+
+    }
+    )
+      .then(response => response.json());
+  
+  }
+};
+
     })
       .then(response => response.json());
   },
@@ -85,3 +94,4 @@ export default {
       .then(response => response.json());
   }
 };
+

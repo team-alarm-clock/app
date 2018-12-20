@@ -15,6 +15,9 @@
 
     <section>
       <h2>My favorite artists</h2>
+      <!-- {{favorites}}
+      <hr>
+      <p>filteredArtists: {{filteredArtists}}</p> -->
       <ul>
         <FavoriteArtists v-for="favorite in favorites"
           :key="favorite.album"
@@ -31,12 +34,33 @@
 <script>
 import api from '../../services/api.js';
 import FavoriteArtists from './FavoriteArtists';
+// import uniq from 'lodash/uniq';
 export default {
   data() {
     return {
-      favorites: null
+      favorites: []
     };
   },
+  // computed: {
+  //   filteredArtists: function() {
+  //     let set = new Set();
+  //     console.log('SET', set);
+  //     return this.favorites
+  //       .map((f, index) => {
+  //         if(set.has(f.id)) {
+  //           // console.log('if has id', f);
+  //           return false;
+  //         }
+  //         else {
+  //           set.add(f.id);
+  //           return index;
+  //         }
+  //       })
+  //       .filter(f => f)
+  //       .map(f => this.favorites[f]);
+  //   }
+  //   // return new Set(this.favorites.map(favorite => favorite));
+  // },
   components: {
     FavoriteArtists
   },
@@ -52,6 +76,7 @@ export default {
   methods: {
     handleSelect(favorite) {
       this.selected = favorite;
+      console.log(this.selected);
     }
   }
 

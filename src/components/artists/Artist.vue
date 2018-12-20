@@ -1,24 +1,15 @@
 <template>
   <div>
-
     <ArtistInfo />
-    <h1>{{artist.name}}</h1>
-    <p>{{artist.realname}}</p>
-    <img :src="artist.images[0].uri" id="photo">
-    <span>{{artist.profile}}</span>
-    
-    <!-- <span>{{this.releases.releases.title}}</span> -->
-    <!-- <Albums :releases="releases"/> -->
-<div v-if="releases">
-  <ul v-for="release in releases"
-            :key="release.id">
-      <li>
-        <img :src="release.thumb">
-        {{release.title}}
-       
-    </li>
-  </ul>
-</div>
+    <div v-if="displayArtist">
+      <h1>{{displayArtist.name}}</h1>
+      <p>{{displayArtist.profile}}</p>
+      <img :src="displayArtist.images[0].uri" id="photo">
+      <!-- <span>{{normailzedProfile}}</span> -->
+    </div>
+    <div>
+      <AlbumList :releases="releases" />
+    </div>
   
 
   </div>
@@ -27,35 +18,38 @@
 <script>
 import ArtistInfo from './ArtistInfo';
 import api from '../../services/api.js';
+import AlbumList from './albums/AlbumList';
 // import Albums from '../artists/albums/Albums';
 export default {
+  data() {
+    return {
+      releases: null,
+      displayArtist: null
+    };
+  },
   props: {
     artist: Object
   },
-  data() {
-    return {
-      releases: null
-    };
-  },
   components: {
-    ArtistInfo,
+    AlbumList,
+    ArtistInfo
     
   },
-  // computed: {
-  //   fixedProfile: function(artist) {
-  //     let banana = artist;
-  //     console.log(banana.profile.replace(/\[]\ , \<\>/g));
-  //   }
-  // },
   created() {
     api.getArtistDetail(this.artist.id)
-      .then(result => this.artist = result); 
+      .then(result => this.displayArtist = result); 
     api.getReleases(this.artist.id)
       .then(results => {
         console.log('here', results);
         return this.releases = results.releases;
       });
-  }
+  },
+  // // computed:  {
+  // //   normailzedProfile() {
+  // //     // console.log(typeof this.artist.profile);
+  // //     return this.artist.profile.replace(/\[[^]]*\]/gm, '');
+  // //   } 
+  // }
 };
 </script>
 
@@ -64,10 +58,8 @@ export default {
   height: 200px;
   float: left;
 }
-li {
-  list-style: none;
-}
 p {
   font-style: italic;
 }
+
 </style>

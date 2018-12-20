@@ -87,6 +87,12 @@ export default {
       }
     })
       .then(response => response.json());
+  },
+
+  getFavorites() {
+    console.log('hello?');
+    return fetch('/api/artists', getOptions('GET'))
+      .then(response => response.json());
   }
 };
 

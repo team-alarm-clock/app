@@ -21,9 +21,9 @@
 </template>
 
 <script>
-import Artist from '../artists/Artist';
+import Artist from './Artist';
 import ArtistList from './ArtistList';
-import Search from './Search';
+import Search from '../search/Search';
 import api from '../../services/api.js';
 
 export default {

@@ -18,7 +18,7 @@
 <script>
 import ArtistInfo from './ArtistInfo';
 import api from '../../services/api.js';
-import AlbumList from './albums/AlbumList';
+import AlbumList from '../albums/AlbumList';
 // import Albums from '../artists/albums/Albums';
 export default {
   data() {

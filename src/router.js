@@ -2,7 +2,7 @@ import VueRouter from 'vue-router';
 import Home from './components/home/Home';
 import Profiles from './components/profiles/Profiles';
 import About from './components/about/About';
-import Artists from './components/search/Artists';
+import Artists from './components/artists/Artists';
 import Artist from './components/artists/Artist';
 
 

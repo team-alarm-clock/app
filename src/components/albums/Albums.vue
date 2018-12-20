@@ -1,8 +1,12 @@
 <template>
 
   <section v-if="releases">
-  {{releases}}
-     <AlbumList :releases="releases"/>
+  <!-- {{releases}} -->
+     <AlbumList :releases="releases"
+     :onSelect="handleSelect"/>
+      
+      <Album :release="selected" />
+      
 
      <div v-if="sortedReleases">{{sortedReleases}}</div>
 
@@ -10,8 +14,9 @@
 </template>
 
 <script>
-// import api from '../../../services/api.js';
-import AlbumList from '../albums/AlbumList';
+// import api from '../../services/api.js';
+import AlbumList from './AlbumList';
+import Album from './Album';
 export default {
   data() {
     return {
@@ -22,7 +27,8 @@ export default {
     releases: Array
   },
   components: {
-    AlbumList
+    AlbumList,
+    Album
   },
   created() {
     this.releases = [
@@ -42,6 +48,7 @@ export default {
     //     this.error = err;
     //   });
   }
+  
 };
 </script>
 

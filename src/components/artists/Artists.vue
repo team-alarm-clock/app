@@ -66,7 +66,6 @@ export default {
     },
 
     handleSelect(artist) {
-      console.log('this is the ', artist);
       this.selected = artist;
     }
   },

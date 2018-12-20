@@ -15,7 +15,13 @@
 
     <section>
       <h2>My favorite artists</h2>
-      <FavoriteArtists :favorites="favorites" />
+      <ul>
+        <FavoriteArtists v-for="favorite in favorites"
+          :key="favorite.album"
+          :favorite="favorite"
+          :onSelect="handleSelect"
+         />
+      </ul>
     </section>
 
     <RouterLink to="/search">Back to Search</RouterLink>
@@ -42,6 +48,11 @@ export default {
       .catch(err => {
         this.error = err;
       });
+  },
+  methods: {
+    handleSelect(favorite) {
+      this.selected = favorite;
+    }
   }
 
 };

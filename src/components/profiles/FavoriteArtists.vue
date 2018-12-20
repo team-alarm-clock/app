@@ -1,21 +1,16 @@
 <template>
   <section>
-    <ul v-for="favorite in favorites"
-      :key="favorite.id">
-      <li>
+      <li v-on:click="onSelect(favorite)">
         {{favorite.artist}}
-        {{favorite.album}}
       </li>
-
-    </ul>
-
   </section>
 </template>
 
 <script>
 export default {
   props: {
-    favorites: null
+    favorite: null,
+    onSelect: Function
   }
 };
 </script>

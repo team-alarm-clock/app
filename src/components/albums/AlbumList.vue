@@ -1,6 +1,6 @@
 <template>
      <ul class="albums">
-      <Album v-for="release in releases" :key="release.id" :release="release"/>
+      <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleSelect"/>
     </ul>
 </template>
 
@@ -8,11 +8,18 @@
 import Album from './Album';
 export default {
   props: {
-    releases: Array
+    releases: Array,
+    onSelect: Function
   },
   components: {
     Album
   },
+  methods: {
+    handleSelect(release) {
+      this.selected = release === this.selected ? null : release;
+      console.log('this is your', release);
+    }
+  }
 
 };
 </script>

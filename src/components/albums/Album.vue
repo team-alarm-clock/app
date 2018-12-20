@@ -1,8 +1,8 @@
 <template>
 <div v-if="release">
-     <li>
-        <img :src="release.thumb">
-        {{release.title}}
+     <li v-on:click="onSelect(release)">
+        <p><img :src="release.thumb"></p>
+       <p>{{release.title}}</p>
      </li>
  </div>
 </template>
@@ -10,7 +10,8 @@
 <script>
 export default {
   props:{
-    release: Object
+    release: Object,
+    onSelect: Function
   }
 
 

@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p {
     margin: 0 auto;
     margin-bottom: 19px;

@@ -70,7 +70,6 @@ export default {
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
-
     }
     )
       .then(response => response.json());

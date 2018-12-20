@@ -1,11 +1,12 @@
 <template>
      <ul class="albums">
-      <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleSelect"/>
+      <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
     </ul>
 </template>
 
 <script>
 import Album from './Album';
+import api from '../../services/api.js';
 export default {
   props: {
     releases: Array,
@@ -15,10 +16,16 @@ export default {
     Album
   },
   methods: {
-    handleSelect(release) {
-      this.selected = release === this.selected ? null : release;
+    handleReleaseSelect(release) {
       console.log('this is your', release);
-    }
+      api.saveRelease(release)
+        .then(releases => {
+          this.releases = releases.results;
+        }).catch(err => {
+          console.log(err);
+        });
+    },
+
   }
 
 };

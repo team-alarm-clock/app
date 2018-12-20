@@ -12,7 +12,7 @@
                 <input :type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
             </label>
             <label>
-                <button type="button" @clicl="showPassword = !showPassword">
+                <button type="button" @click="showPassword = !showPassword">
                     {{showPassword ? 'Hide' : 'Show'}}
                 </button>
             </label>

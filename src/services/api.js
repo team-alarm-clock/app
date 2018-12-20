@@ -65,7 +65,6 @@ export default {
 
 
   getArtistDetail(id) {
-    console.log(id);
     return fetch(`https://api.discogs.com/artists/${id}`, {
       method: 'GET',
       headers: {
@@ -79,7 +78,6 @@ export default {
   },
 
   getReleases(id) {
-    console.log('this is releases', id);
     return fetch(`https://api.discogs.com/artists/${id}/releases?year,desc`, {
       method: 'GET',
       headers: {
@@ -87,6 +85,24 @@ export default {
       }
     })
       .then(response => response.json());
-  }
+  },
+
+  getFavorites() {
+    return fetch('/api/artists', getOptions('GET'))
+      .then(response => response.json());
+  },
+  saveRelease(release) {
+    return fetch('/api/artists', getOptions('POST', release))
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+
+        return response.json()
+          .then(error => {
+            return Promise.reject(error);
+          });
+      });
+  },
 };
 

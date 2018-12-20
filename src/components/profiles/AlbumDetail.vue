@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="badges-container">
     <h2>My Badges</h2>
     <div class="badges">
@@ -13,6 +14,10 @@
     </section>
 
     <RouterLink to="/search">Search</RouterLink>
+=======
+  <div>
+    <h1>I am the Album Detail for Favorites</h1>
+>>>>>>> b12a5bef33f69d1b2a772179a68ddb255b0feb4b
   </div>
 </template>
 

@@ -4,7 +4,9 @@
     <div v-if="displayArtist">
       <h1>{{displayArtist.name}}</h1>
       <p>{{displayArtist.profile}}</p>
+      <div v-if="displayArtist.images">
       <img :src="displayArtist.images[0].uri" id="photo">
+      </div>
       <!-- <span>{{normailzedProfile}}</span> -->
     </div>
     <div>

@@ -10,8 +10,8 @@
 </template>
 
 <script>
-// import api from '../../../services/api.js';
-import AlbumList from '../albums/AlbumList';
+// import api from '../../services/api.js';
+import AlbumList from './AlbumList';
 export default {
   data() {
     return {

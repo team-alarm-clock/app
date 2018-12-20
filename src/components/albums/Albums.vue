@@ -1,8 +1,9 @@
 <template>
 
   <section v-if="releases">
-  {{releases}}
-     <AlbumList :releases="releases"/>
+  <!-- {{releases}} -->
+     <AlbumList :releases="releases"
+      :onSelect="handleSelect"/>
 
      <div v-if="sortedReleases">{{sortedReleases}}</div>
 
@@ -41,6 +42,12 @@ export default {
     //   .catch(err => {
     //     this.error = err;
     //   });
+  }, 
+  methods: {
+    handleSelect(releases) {
+      this.selected = releases === this.selected ? null : releases;
+      console.log('this is your', (handleSelect));
+    }
   }
 };
 </script>

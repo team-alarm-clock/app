@@ -1,8 +1,8 @@
 <template>
 <div v-if="release">
      <li>
-        <img :src="release.thumb">
-        {{release.title}}
+        <p><img :src="release.thumb"></p>
+       <p>{{release.title}}</p>
      </li>
  </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="grid-list">
-    <li>
+    <li v-on:click="handleSelect(release)">
       {{release.title}}
       {{release.thumb}}
     </li>
@@ -11,6 +11,11 @@
 export default {
   props: {
     release: null
+  },
+  methods: {
+    handleSelect(release) {
+      console.log('clicked', release);
+    }
   }
 };
 </script>

@@ -1,8 +1,9 @@
 <template>
   <ul>
     <Album v-for="release in releases"
-            :key="release.id" 
-            :releases="releases"/>
+      :key="release.id" 
+      :releases="releases"
+    />
   </ul>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   },
   components: {
     Album
-  }
+  },
+
 };
 </script>
 

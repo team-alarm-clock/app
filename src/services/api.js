@@ -90,6 +90,19 @@ export default {
   getFavorites() {
     return fetch('/api/artists', getOptions('GET'))
       .then(response => response.json());
-  }
+  },
+  saveRelease(release) {
+    return fetch('/api/artists', getOptions('POST', release))
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        }
+
+        return response.json()
+          .then(error => {
+            return Promise.reject(error);
+          });
+      });
+  },
 };
 

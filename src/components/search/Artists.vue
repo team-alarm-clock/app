@@ -39,9 +39,7 @@ export default {
     ArtistList,
     Artist
   },
-  created() {
-    this.searchArtist();
-  },
+  
   beforeUpdate() {
     this.artists = this.filteredArtist();
   },

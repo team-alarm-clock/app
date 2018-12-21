@@ -1,6 +1,6 @@
 <template>
   <section>
-
+    <Loading :loading="loading" />
     <section v-if="!selected">
       <h2>Search artist</h2>
       <Search :onSearch="handleSearch" />
@@ -25,19 +25,23 @@ import Artist from './Artist';
 import ArtistList from './ArtistList';
 import Search from '../search/Search';
 import api from '../../services/api.js';
+import Loading from '../shared/Loading';
 
 export default {
   data() {
     return {
       artists: null,
       selected:null,
+      loading: false,
       search: decodeURIComponent(this.$route.query.search)
     };
   },
+
   components: {
     Search,
     ArtistList,
-    Artist
+    Artist,
+    Loading
   },
   
   beforeUpdate() {
@@ -57,9 +61,11 @@ export default {
     },
 
     searchArtist() {
+      this.loading = true;
       api.getArtists(this.search)
         .then(artists => {
           this.artists = artists.results;
+          this.loading = false;
         }).catch(err => {
           console.log(err);
         });

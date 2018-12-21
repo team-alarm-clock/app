@@ -3,11 +3,10 @@
     <ArtistInfo />
     <div v-if="displayArtist">
       <h1>{{displayArtist.name}}</h1>
-      <p>{{displayArtist.profile}}</p>
-      <div v-if="displayArtist.images">
+      <p v-if="displayArtist.profile">{{displayArtist.profile}}</p>
+      <span v-if="displayArtist.images">
       <img :src="displayArtist.images[0].uri" id="photo">
-      </div>
-      <!-- <span>{{normailzedProfile}}</span> -->
+      </span>
     </div>
     <div>
       <AlbumList :releases="releases" />
@@ -21,7 +20,7 @@
 import ArtistInfo from './ArtistInfo';
 import api from '../../services/api.js';
 import AlbumList from '../albums/AlbumList';
-// import Albums from '../artists/albums/Albums';
+
 export default {
   data() {
     return {
@@ -45,13 +44,7 @@ export default {
         console.log('here', results);
         return this.releases = results.releases;
       });
-  },
-  // // computed:  {
-  // //   normailzedProfile() {
-  // //     // console.log(typeof this.artist.profile);
-  // //     return this.artist.profile.replace(/\[[^]]*\]/gm, '');
-  // //   } 
-  // }
+  }
 };
 </script>
 

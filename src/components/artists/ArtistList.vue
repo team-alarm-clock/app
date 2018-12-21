@@ -2,7 +2,6 @@
   <section>
       <li v-on:click="onSelect(artist)">
           {{artist.title !== "Undefined" ? artist.title : "no title"}}
-          {{artist.id}}
       </li>
       
   </section>

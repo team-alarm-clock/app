@@ -9,8 +9,6 @@
 </template>
 
 <script>
-
-
 export default {
   props: {
     search: String,
@@ -39,9 +37,13 @@ export default {
     }
   }
 };
-
 </script>
 
-<style>
-
+<style scoped>
+section {
+  border: 1px solid black;
+  width: 50vw;
+  margin: auto;
+  padding: 10px;
+}
 </style>

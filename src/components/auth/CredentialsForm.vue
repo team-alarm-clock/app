@@ -23,7 +23,6 @@
     </section>
 </template>
 
-
 <script>
 export default {
   props: {
@@ -61,12 +60,9 @@ form {
     color:white;
     font-weight:600;
     }
-
 h3 {
     text-align: center;
-    }    
-
-
+    }  
 input {
    display: block;
    padding: 10px;

@@ -1,6 +1,5 @@
 <template>
   <div class="badges-container">
-    <h2>My Badges</h2>
     <div class="badges">
     <!-- <v-container>
      <v-layout align-center justify-space-around>
@@ -14,7 +13,8 @@
     </div>
 
     <section>
-      <h2>My favorite artists</h2>
+    <Loading :loading="loading"/>
+      <h2>MY FAVORITE ALBUM & ARTISTS</h2>
       <ul>
         <FavoriteArtists v-for="favorite in favorites"
           :key="favorite.album"
@@ -23,7 +23,6 @@
          />
       </ul>
     </section>
-
     <RouterLink to="/search">Back to Search</RouterLink>
   </div>
 </template>
@@ -31,19 +30,23 @@
 <script>
 import api from '../../services/api.js';
 import FavoriteArtists from './FavoriteArtists';
+import Loading from '../shared/Loading';
 export default {
   data() {
     return {
+      loading: true,
       favorites: []
     };
   },
   components: {
-    FavoriteArtists
+    FavoriteArtists,
+    Loading
   },
   created() {
     api.getFavorites()
       .then(favorites => {
         this.favorites = favorites;
+        this.loading = false;
       })
       .catch(err => {
         this.error = err;

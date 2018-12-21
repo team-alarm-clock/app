@@ -21,9 +21,11 @@ export default {
       api.saveRelease(release)
         .then(releases => {
           this.releases = releases.results;
+          this.$router.push('/profile');
         }).catch(err => {
           console.log(err);
         });
+
     },
 
   }

@@ -36,8 +36,7 @@
              S-DiT (Software Developer In Training), Musician, Recovering Art School Student, Chef, Father, Miscreant, KJiT ( KJ In Training )
           </p>
       </section>  
-    </section> 
-    
+    </section>  
   </div>
 </template>
 
@@ -68,10 +67,10 @@ export default {
   margin-bottom: 40px;
 }
 .bio-col {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 img {
   border-radius: 25% 25% 25% 25%;

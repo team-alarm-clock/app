@@ -1,17 +1,5 @@
 <template>
-  <div class="badges-container">
-    <div class="badges">
-    <!-- <v-container>
-     <v-layout align-center justify-space-around>
-       <v-flex> -->
-       <!-- <icon name="flag"></icon>
-       <v-icon>far fa-calendar-alt</v-icon>
-       <v-icon>fas fa-trophy</v-icon> -->
-       <!-- </v-flex>
-     </v-layout>
-    </v-container> -->
-    </div>
-
+  <div class="selected-features">
     <section>
     <Loading :loading="loading"/>
       <h2>MY FAVORITE ALBUM &amp; ARTISTS</h2>
@@ -58,7 +46,6 @@ export default {
       console.log(this.selected);
     }
   }
-
 };
 </script>
 

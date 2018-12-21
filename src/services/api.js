@@ -40,7 +40,6 @@ export default {
         if(response.ok) {
           return response.json();
         }
-
         return response.json()
           .then(error => {
             return Promise.reject(error);
@@ -58,11 +57,9 @@ export default {
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
-    }
-    )
+    })
       .then(response => response.json());
   },
-
 
   getArtistDetail(id) {
     return fetch(`https://api.discogs.com/artists/${id}`, {
@@ -70,8 +67,7 @@ export default {
       headers: {
         'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
       }
-    }
-    )
+    })
       .then(response => response.json());
   
   },
@@ -96,7 +92,6 @@ export default {
         if(response.ok) {
           return response.json();
         }
-
         return response.json()
           .then(error => {
             return Promise.reject(error);

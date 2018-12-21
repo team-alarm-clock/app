@@ -1,7 +1,7 @@
 <template>
   <section>
     <Loading :loading="loading" />
-    <section v-if="!selected">
+    <div v-if="!selected">
       <h2>Search artist</h2>
       <Search :onSearch="handleSearch" />
       <ul v-if="artists">
@@ -11,12 +11,10 @@
           :onSelect="handleSelect"
         />
       </ul>
-    </section>
-
-    <section v-else>
+    </div>
+    <div v-else>
       <Artist :artist="selected"/>
-    </section>
-
+    </div>
   </section>
 </template>
 

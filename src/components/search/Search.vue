@@ -1,11 +1,10 @@
 <template>
-    <section>
-        <form @submit.prevent="handleSubmit">
-            <input v-model="keyword">
-            <button>Search</button>
-        </form>
-        
-    </section>
+  <section>
+      <form @submit.prevent="handleSubmit">
+          <input v-model="keyword">
+          <button>Search</button>
+      </form>
+  </section>
 </template>
 
 <script>

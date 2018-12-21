@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-  <!-- <font-awesome-icon icon="user-secret" /> -->
    <header>
      <nav v-if="user">
         <Header />
@@ -95,7 +94,6 @@ export default {
   right: 0;
   margin-right:20px;
   background-color:#2c3e50;
-  
 }
 #logout a{
   color:white;

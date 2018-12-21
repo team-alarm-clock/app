@@ -1,9 +1,8 @@
 <template>
   <section>
-      <li v-on:click="onSelect(artist)">
-          {{artist.title !== "Undefined" ? artist.title : "no title"}}
-      </li>
-      
+    <li v-on:click="onSelect(artist)">
+        {{artist.title !== "Undefined" ? artist.title : "no title"}}
+    </li>  
   </section>
 </template>
 

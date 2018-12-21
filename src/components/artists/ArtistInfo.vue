@@ -1,7 +1,6 @@
 <template>
   <section>
-    <h1>Artist Info Page</h1>
-
+    <h2>Artist Info Page</h2>
   </section>
 </template>
 

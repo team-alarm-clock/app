@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is About US</h1>
+    <h2>This is About US</h2>
     <section class="bio-body">
       <img src="" alt="profile photo">
       <section class="bio-col">
@@ -40,8 +40,7 @@
              Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.
           </p>
       </section>  
-    </section> 
-    
+    </section>  
   </div>
 </template>
 
@@ -72,10 +71,10 @@ export default {
   margin-bottom: 40px;
 }
 .bio-col {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 </style>

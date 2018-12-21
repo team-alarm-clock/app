@@ -1,9 +1,9 @@
 <template>
-<div v-if="release">
-     <li v-on:click="onSelect(release)">
-        <p><img :src="release.thumb"></p>
-       <p>{{release.title}}</p>
-     </li>
+ <div v-if="release">
+    <li v-on:click="onSelect(release)">
+      <p><img :src="release.thumb"></p>
+      <p>{{release.title}}</p>
+    </li>
  </div>
 </template>
 
@@ -25,7 +25,6 @@ li img {
   width:90%;
   max-height:340px;
   object-fit: contain;
- 
  }
 
 </style>

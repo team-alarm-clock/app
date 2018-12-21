@@ -48,11 +48,6 @@ export default {
 
 <style scoped>
 .team-div {
-  /* margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   padding: 50px;
 }
 .bio-body {
@@ -76,27 +71,22 @@ img {
   border-radius: 25% 25% 25% 25%;
   box-shadow: 5px 10px black;
 }
-
 h3 {
   font-size: 1.75em;
   padding: 20px;
   margin-bottom: 0;
 }
-
 p {
   font-size: 1.05em;
   margin: 0 auto;
   padding: 20px;
   padding-top: 0;
 }
-
 h1 {
   margin-bottom: 0;
 }
-
 .carmen {
   width: 192px;
   height: 192px;
 }
-
 </style>

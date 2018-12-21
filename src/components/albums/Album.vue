@@ -14,7 +14,6 @@ export default {
     onSelect: Function
   }
 
-
 };
 </script>
 
@@ -26,5 +25,4 @@ li img {
   max-height:340px;
   object-fit: contain;
  }
-
 </style>

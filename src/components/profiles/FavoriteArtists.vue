@@ -13,9 +13,6 @@ export default {
     favorite: null,
     onSelect: Function
   }
-  // computed: {
-  //   reformat: function() {return favorite.album.toUpperCase()};
-  // }
 };
 </script>
 

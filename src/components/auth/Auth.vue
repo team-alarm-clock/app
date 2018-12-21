@@ -110,12 +110,9 @@ p {
     background-color:#74b5e0;
     color:white;
     }
-
 h3 {
     text-align: center;
     }    
-
-
 input {
    display: block;
    padding: 10px;

@@ -1,6 +1,5 @@
 <template>
   <section v-if="releases">
-  <!-- {{releases}} -->
     <AlbumList :releases="releases"
     :onSelect="handleSelect"/> 
     <Album :release="selected" />

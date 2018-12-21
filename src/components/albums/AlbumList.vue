@@ -1,7 +1,7 @@
 <template>
   <ul class="albums">
   <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
-</ul>
+  </ul>
 </template>
 
 <script>

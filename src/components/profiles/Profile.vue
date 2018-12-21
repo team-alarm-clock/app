@@ -5,8 +5,8 @@
       <h2>MY FAVORITE ALBUM &amp; ARTISTS</h2>
       <ul>
         <FavoriteArtists v-for="favorite in favorites"
-          :key="favorite.album"
           :favorite="favorite"
+          :key="favorite.album"
           :onSelect="handleSelect"
          />
       </ul>

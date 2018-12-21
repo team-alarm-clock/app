@@ -1,13 +1,15 @@
 <template>
     <section>
         <div v-if="method === 'signin'">
-            <h2>SIGN IN</h2>
+            <h1>POSTER CHILD APP</h1>
+            <h3>SIGN IN</h3>
             <p>NEED TO REGISTER?
                 <button @click="method = 'signup'">SIGN UP</button>
             </p>
             <CredentialsForm prompt="Sign In" :onSubmit="handleSignIn" />
         </div>
         <div v-if="method === 'signup'">
+            <h1>POSTER CHILD APP</h1>
             <h2>SIGN UP</h2>
             <p>ALREADY HAVE AN ACCOUNT?
                 <button @click="method = 'signin'">SIGN UP</button>
@@ -89,19 +91,24 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+h1{font-family:'Audiowide'}
 p {
     margin: 0 auto;
     margin-bottom: 19px;
     width: 330px;
     padding:10px;
-    background-color: rgba(182, 182, 182, 0.4);
+    color:white;
+    font-weight:600;
+    background-color: #74b5e0;
     }
  form {
     padding:10px;
     margin: 0 auto;
     align-content: center;
     width:330px;
-    background-color: rgba(182, 182, 182, 0.4);
+    background-color:#74b5e0;
+    color:white;
     }
 
 h3 {

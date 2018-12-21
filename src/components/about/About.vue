@@ -1,15 +1,6 @@
 <template>
   <div class="team-div">
-     <h2>This is About US</h2>
-    <section class="bio-body">
-      <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGGR59BN-acc07133bac4-72" alt="profile photo">
-      <section class="bio-col">
-        <h3>Michael Elliot</h3>
-          <p>
-             S-DiT (Software Developer In Training), Musician, Recovering Art School Student, Chef, Father, Miscreant, KJiT ( KJ In Training )
-          </p>
-      </section>  
-    </section> 
+    <h2>ABOUT US</h2>
     <section class="bio-body">
       <img src="https://ca.slack-edge.com/T6FCZF1HR-UDFV35JF7-50e310923778-72" alt="profile photo">
       <section class="bio-col">
@@ -20,6 +11,15 @@
       </section> 
     </section>   
     <section class="bio-body">
+      <img src="https://avatars2.githubusercontent.com/u/38193198?s=400&v=4" class="carmen" alt="profile photo">
+      <section class="bio-col">
+        <h3>Carmen Ramos</h3>
+          <p>
+              Mother,  student,  software developer, food and nutrition enthusiast
+          </p>
+      </section>  
+    </section> 
+    <section class="bio-body">
       <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGTMUUFR-a84f193cf11f-72" alt="profile photo">
       <section class="bio-col">
         <h3>Abel Quintero</h3>
@@ -29,11 +29,11 @@
       </section>  
     </section>  
     <section class="bio-body">
-      <img src="https://avatars2.githubusercontent.com/u/38193198?s=400&v=4" class="carmen" alt="profile photo">
+      <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGGR59BN-acc07133bac4-72" alt="profile photo">
       <section class="bio-col">
-        <h3>Carmen Ramos</h3>
+        <h3>Michael Elliot</h3>
           <p>
-              Mother,  student,  software developer, food and nutrition enthusiast
+             S-DiT (Software Developer In Training), Musician, Recovering Art School Student, Chef, Father, Miscreant, KJiT ( KJ In Training )
           </p>
       </section>  
     </section>  

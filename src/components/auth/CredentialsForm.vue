@@ -48,14 +48,18 @@ p {
     margin-bottom: 19px;
     width: 330px;
     padding:10px;
-    background-color: rgba(182, 182, 182, 0.4);
+    background-color: #74b5e0;
+    color:white;
+    font-weight:600;
     }
 form {
     padding:10px;
     margin: 0 auto;
     align-content: center;
     width:330px;
-    background-color: rgba(182, 182, 182, 0.4);
+    background-color:  #74b5e0;
+    color:white;
+    font-weight:600;
     }
 
 h3 {

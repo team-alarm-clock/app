@@ -92,5 +92,116 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
+  margin-right:20px;
+  background-color:#2c3e50;
 }
+#logout a{
+  color:white;
+  font-weight:600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding:5px;
+ }
+  #logout a:hover{
+  color:white;
+  font-weight:600;
+  text-decoration: none;
+  background-color: #74b5e0;
+  padding:5px;
+ }
+ .halftone {  
+  margin: 0;
+  padding: 0;
+  height:100%;
+  position: relative;
+  box-sizing: border-box;
+  background-image:
+    radial-gradient(
+      circle,
+      dodgerblue 85%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 80%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 75%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 70%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 65%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 60%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 55%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 50%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 45%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 40%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 35%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 30%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 25%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      dodgerblue 20%,
+      transparent 0
+      );  
+  background-size: 1em 1em;
+  background-repeat: repeat-x;
+  background-position:
+    0 13em, 
+    0 12em, 
+    0 11em, 
+    0 10em, 
+    0 9em, 
+    0 8em,
+    0 7em,
+    0 6em,
+    0 5em,
+    0 4em,
+    0 3em,
+    0 2em,
+    0 1em,
+    0 0;
+  }
 </style>

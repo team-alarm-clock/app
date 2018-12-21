@@ -1,9 +1,9 @@
 <template>
   <section>
-      <li v-on:click="onSelect(favorite)">
-        Album: {{favorite.album}} |
-        Artist: {{favorite.artist}}
-      </li>
+    <li v-on:click="onSelect(favorite)">
+      Album: {{favorite.album}} |
+      Artist: {{favorite.artist}}
+    </li>
   </section>
 </template>
 

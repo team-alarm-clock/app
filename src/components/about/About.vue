@@ -2,6 +2,15 @@
   <div class="team-div">
     <h1>About US</h1>
     <section class="bio-body">
+      <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGGR59BN-acc07133bac4-72" alt="profile photo">
+      <section class="bio-col">
+        <h3>Michael Elliot</h3>
+          <p>
+             S-DiT (Software Developer In Training), Musician, Recovering Art School Student, Chef, Father, Miscreant, KJiT ( KJ In Training )
+          </p>
+      </section>  
+    </section> 
+    <section class="bio-body">
       <img src="https://ca.slack-edge.com/T6FCZF1HR-UDFV35JF7-50e310923778-72" alt="profile photo">
       <section class="bio-col">
         <h3>Paige Gorry</h3>
@@ -10,15 +19,6 @@
           </p>
       </section> 
     </section>   
-    <section class="bio-body">
-      <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGGR59BN-acc07133bac4-72" alt="profile photo">
-      <section class="bio-col">
-        <h3>Michael Elliot</h3>
-          <p>
-             S-DiT (Software Developer In Training), Musician, Recovering Art School Student, Chef, Father, Miscreant, KJiT ( KJ In Training )
-          </p>
-      </section>  
-    </section>  
     <section class="bio-body">
       <img src="https://ca.slack-edge.com/T6FCZF1HR-UDGTMUUFR-a84f193cf11f-72" alt="profile photo">
       <section class="bio-col">
@@ -29,7 +29,7 @@
       </section>  
     </section>  
     <section class="bio-body">
-      <img src="https://avatars2.githubusercontent.com/u/38193198?s=400&v=4" alt="profile photo">
+      <img src="https://avatars2.githubusercontent.com/u/38193198?s=400&v=4" class="carmen" alt="profile photo">
       <section class="bio-col">
         <h3>Carmen Ramos</h3>
           <p>
@@ -74,7 +74,8 @@ export default {
     flex-direction: column;
 }
 img {
-  border-radius: 50%;
+  border-radius: 25% 25% 25% 25%;
+  box-shadow: 5px 10px black;
 }
 
 h3 {
@@ -92,6 +93,11 @@ p {
 
 h1 {
   margin-bottom: 0;
+}
+
+.carmen {
+  width: 192px;
+  height: 192px;
 }
 
 </style>

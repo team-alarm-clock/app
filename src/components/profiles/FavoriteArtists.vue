@@ -1,7 +1,7 @@
 <template>
   <section>
       <li v-on:click="onSelect(favorite)">
-        Album: {{favorite.album}} | 
+        Album: {{favorite.album}} |
         Artist: {{favorite.artist}}
       </li>
   </section>
@@ -13,6 +13,9 @@ export default {
     favorite: null,
     onSelect: Function
   }
+  // computed: {
+  //   reformat: function() {return favorite.album.toUpperCase()};
+  // }
 };
 </script>
 

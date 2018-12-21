@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <section>
+  <section>
+    <div>
       Here are other users who have liked this artist!
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>

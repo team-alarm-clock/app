@@ -1,7 +1,7 @@
 <template>
-     <ul class="albums">
-      <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
-    </ul>
+  <ul class="albums">
+  <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
+</ul>
 </template>
 
 <script>
@@ -22,14 +22,12 @@ export default {
         .then(releases => {
           this.releases = releases.results;
           this.$router.push('/profile');
-        }).catch(err => {
+        })
+        .catch(err => {
           console.log(err);
         });
-
     },
-
   }
-
 };
 </script>
 

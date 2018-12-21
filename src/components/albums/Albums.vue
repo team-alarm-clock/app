@@ -1,20 +1,14 @@
 <template>
-
   <section v-if="releases">
   <!-- {{releases}} -->
-     <AlbumList :releases="releases"
-     :onSelect="handleSelect"/>
-      
-      <Album :release="selected" />
-      
-
-     <div v-if="sortedReleases">{{sortedReleases}}</div>
-
+    <AlbumList :releases="releases"
+    :onSelect="handleSelect"/> 
+    <Album :release="selected" />
+    <div v-if="sortedReleases">{{sortedReleases}}</div>
   </section>
 </template>
 
 <script>
-// import api from '../../services/api.js';
 import AlbumList from './AlbumList';
 import Album from './Album';
 export default {
@@ -40,15 +34,7 @@ export default {
       },
 
     ];
-    // api.getAlbums()
-    //   .then(response => {
-    //     this.releases = response;
-    //   })
-    //   .catch(err => {
-    //     this.error = err;
-    //   });
-  }
-  
+  } 
 };
 </script>
 

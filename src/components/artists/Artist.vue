@@ -2,7 +2,7 @@
   <div>
     <ArtistInfo />
     <div v-if="displayArtist">
-      <h1>{{displayArtist.name}}</h1>
+      <h2>{{displayArtist.name}}</h2>
       <p v-if="displayArtist.profile">{{displayArtist.profile}}</p>
       <span v-if="displayArtist.images">
       <img :src="displayArtist.images[0].uri" id="photo">
@@ -11,8 +11,6 @@
     <div>
       <AlbumList :releases="releases" />
     </div>
-  
-
   </div>
 </template>
 
@@ -34,7 +32,6 @@ export default {
   components: {
     AlbumList,
     ArtistInfo
-    
   },
   created() {
     api.getArtistDetail(this.artist.id)
@@ -56,5 +53,4 @@ export default {
 p {
   font-style: italic;
 }
-
 </style>

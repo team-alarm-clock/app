@@ -1,9 +1,9 @@
 <template>
     <header>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search">Search</RouterLink>
-        <RouterLink to="/profile">Profile</RouterLink>
-        <RouterLink to="/about-us">About Us</RouterLink>
+        <RouterLink to="/">HOME</RouterLink>
+        <RouterLink to="/search">SEARCH</RouterLink>
+        <RouterLink to="/profile">PROFILE</RouterLink>
+        <RouterLink to="/about-us">ABOUT US</RouterLink>
     </header>
 </template>
 

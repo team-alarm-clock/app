@@ -26,6 +26,7 @@ import ArtistList from './ArtistList';
 import Search from '../search/Search';
 import api from '../../services/api.js';
 import Loading from '../shared/Loading';
+
 export default {
   data() {
     return {
@@ -35,6 +36,7 @@ export default {
       search: decodeURIComponent(this.$route.query.search)
     };
   },
+
   components: {
     Search,
     ArtistList,

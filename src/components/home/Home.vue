@@ -1,7 +1,7 @@
 <template>
     <section>
-        <h1>WELCOME TO POSTER CHILD!</h1>
-        <p>Add your favorite albums from your favorite artists!</p>
+        <h1>POSTER CHILD</h1>
+        <p>ADD YOUR FAVORITE ALBUMS FROM YOUR FAVORITE ARTISTS</p>
         <p>Click <RouterLink to="/search">SEARCH</RouterLink> to start!</p>
     </section>
 </template>

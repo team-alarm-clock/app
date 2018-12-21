@@ -14,11 +14,11 @@
 
     <section>
     <Loading :loading="loading"/>
-      <h2>MY FAVORITE ALBUM & ARTISTS</h2>
+      <h2>MY FAVORITE ALBUM &amp; ARTISTS</h2>
       <ul>
         <FavoriteArtists v-for="favorite in favorites"
-          :key="favorite.album"
           :favorite="favorite"
+          :key="favorite.album"
           :onSelect="handleSelect"
          />
       </ul>

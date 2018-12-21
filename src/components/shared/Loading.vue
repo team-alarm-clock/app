@@ -1,9 +1,7 @@
 <template>
-
   <div v-show="loading" class="loader">
     <h1>Loading...</h1>
   </div>
-
 </template>
 
 <script>

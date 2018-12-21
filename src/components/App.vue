@@ -93,6 +93,23 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
+  margin-right:20px;
+  background-color:#2c3e50;
+  
 }
+#logout a{
+  color:white;
+  font-weight:600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding:5px;
+ }
+  #logout a:hover{
+  color:white;
+  font-weight:600;
+  text-decoration: none;
+  background-color: #74b5e0;
+  padding:5px;
+ }
 
 </style>

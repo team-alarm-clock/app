@@ -11,12 +11,15 @@
 export default {
 
 };
-</script>
+</script>git
 
 <style scoped>
 header {
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    background-color: #74b5e0;
 }
+a {color:white;
+font-weight:900}
 </style>

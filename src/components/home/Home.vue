@@ -2,7 +2,7 @@
     <section>
         <h1>WELCOME TO POSTER CHILD!</h1>
         <p>Add your favorite albums from your favorite artists!</p>
-        <p>Click <RouterLink to="/search">SEARCH</RouterLink> to start!</p>
+        <p>Click <RouterLink to="/search"><strong>SEARCH</strong></RouterLink> to start!</p>
     </section>
 </template>
 

@@ -94,7 +94,9 @@ p {
     margin-bottom: 19px;
     width: 330px;
     padding:10px;
-    background-color: rgba(182, 182, 182, 0.4);
+    color:white;
+    font-weight:600;
+    background-color: #74b5e0;
     }
  form {
     padding:10px;

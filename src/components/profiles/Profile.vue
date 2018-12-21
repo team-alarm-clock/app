@@ -1,6 +1,5 @@
 <template>
   <div class="badges-container">
-    <h2>My Badges</h2>
     <div class="badges">
     <!-- <v-container>
      <v-layout align-center justify-space-around>
@@ -15,7 +14,7 @@
 
     <section>
     <Loading :loading="loading"/>
-      <h2>My favorite artists</h2>
+      <h2>MY FAVORITE ALBUM & ARTISTS</h2>
       <ul>
         <FavoriteArtists v-for="favorite in favorites"
           :key="favorite.album"

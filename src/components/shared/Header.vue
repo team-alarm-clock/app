@@ -19,7 +19,16 @@ header {
     display: flex;
     justify-content: space-around;
     background-color: #74b5e0;
+    
 }
-a {color:white;
-font-weight:900}
+a {
+    color:white;
+    font-weight:900;
+    text-decoration: none;
+    letter-spacing: 2px;}
+a:hover {
+    color:#2c3e50;
+    font-weight:900;
+    text-decoration: none;
+    letter-spacing: 2px;}
 </style>

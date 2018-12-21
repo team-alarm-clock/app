@@ -3,21 +3,17 @@
     <h1>I am the Album Detail for Favorites</h1>
   
     <form @submit.prevent="handleSubmit">
+      <h2>Edit an album!
       <p>
         <label>Artist:</label>
         <input v-model="artist.title" require>
       </p>
       <p>
         <label>Album Title:</label>
-        <input v-model="goal.startDate" require>
+        <input v-model="album.id" require>
       </p>
 
-      <p>
-        <label>Genre:</label>
-        <input v-model="goal.endDate" require>
-      </p>
-
-      <button>Add</button>
+      <button>Update</button>
     </form>
 
   
@@ -26,7 +22,7 @@
 
 
 <script>
-import Profile from './Profile';
+
 function initAlbum() {
   return {
     artist: '',
@@ -54,6 +50,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+form {
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+input, button {
+  margin: 0 5px;
+}
+input {
+  width: 125px;
+  font-size: 1.05em;
+}
 
 </style>

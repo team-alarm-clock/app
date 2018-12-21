@@ -34,7 +34,7 @@ export default {
 <style>
 .albums {
     padding: 0;
-    margin-top:.5%;    
+    margin-top:100px;    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     grid-gap: 10px;

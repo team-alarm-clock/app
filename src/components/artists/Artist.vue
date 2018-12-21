@@ -1,11 +1,10 @@
 <template>
   <div>
-    <ArtistInfo />
     <div v-if="displayArtist">
       <h2>{{displayArtist.name}}</h2>
+      <img :src="displayArtist.images[0].uri" id="photo">
       <p v-if="displayArtist.profile">{{displayArtist.profile}}</p>
       <span v-if="displayArtist.images">
-      <img :src="displayArtist.images[0].uri" id="photo">
       </span>
     </div>
     <div>
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-import ArtistInfo from './ArtistInfo';
 import api from '../../services/api.js';
 import AlbumList from '../albums/AlbumList';
 
@@ -30,8 +28,7 @@ export default {
     artist: Object
   },
   components: {
-    AlbumList,
-    ArtistInfo
+    AlbumList
   },
   created() {
     api.getArtistDetail(this.artist.id)

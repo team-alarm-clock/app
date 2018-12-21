@@ -1,6 +1,6 @@
 <template>
- <div v-if="release">
-    <li v-on:click="onSelect(release)">
+ <div v-if="release.thumb">
+    <li v-on:click="onSelect(release)"> 
       <p><img :src="release.thumb"></p>
       <p>{{release.title}}</p>
     </li>

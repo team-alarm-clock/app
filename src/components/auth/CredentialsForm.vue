@@ -39,7 +39,6 @@ export default {
       showPassword: false
     };
   }
-
 };
 </script>
 
@@ -51,7 +50,7 @@ p {
     padding:10px;
     background-color: rgba(182, 182, 182, 0.4);
     }
- form {
+form {
     padding:10px;
     margin: 0 auto;
     align-content: center;
@@ -75,10 +74,10 @@ input {
    font-size: 15px;
    text-align: left;
   }
-  input:focus {
+input:focus {
     background-color: #f7ffe0;
     border-radius: 5px;
     outline:none;
   }
-  pre{color:rgb(201, 94, 94);}
+pre{color:rgb(201, 94, 94);}
 </style>

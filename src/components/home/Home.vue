@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h1>POSTER CHILD</h1>
+        <h1>Poster Child</h1>
         <p>ADD YOUR FAVORITE ALBUMS FROM YOUR FAVORITE ARTISTS</p>
         <p>Click <RouterLink to="/search">SEARCH</RouterLink> to start!</p>
     </section>
@@ -13,6 +13,11 @@ export default {
 </script>
 
 <style scoped>
+
+h1 {
+    text-transform: uppercase; 
+}
+
 #filler {
     width: 50vw;
     height: 75px;

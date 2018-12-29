@@ -1,10 +1,12 @@
 <template>
- <div v-if="release.thumb">
+ <!-- don't you still want to show the title?
+ how about using a geneal placeholder? -->
+ <!-- <div v-if="release.thumb"> -->
     <li v-on:click="onSelect(release)"> 
-      <p><img :src="release.thumb"></p>
+      <p><img :src="release.thumb ? release.thumb : 'album-placeholder.png'"></p>
       <p>{{release.title}}</p>
     </li>
- </div>
+ <!-- </div> -->
 </template>
 
 <script>

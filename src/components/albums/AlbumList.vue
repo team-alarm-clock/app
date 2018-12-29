@@ -1,12 +1,13 @@
 <template>
   <ul class="albums">
-  <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
+    <Album v-for="release in releases" :key="release.id" :release="release" :onSelect="handleReleaseSelect"/>
   </ul>
 </template>
 
 <script>
 import Album from './Album';
 import api from '../../services/api.js';
+
 export default {
   props: {
     releases: Array,
@@ -17,10 +18,16 @@ export default {
   },
   methods: {
     handleReleaseSelect(release) {
-      console.log('this is your', release);
       api.saveRelease(release)
         .then(releases => {
-          this.releases = releases.results;
+          // (1) This component doesn't own the data,
+          // so it shouldn't update:
+          // this.releases = releases.results;
+          
+          // (2) It doesn't matter because you are navigating 
+          // away to the profile page. 
+          // Is this correct behavior??? Would I not want to add more
+          // albums???
           this.$router.push('/profile');
         })
         .catch(err => {
@@ -32,6 +39,7 @@ export default {
 </script>
 
 <style>
+
 .albums {
     padding: 0;
     margin-top:100px;    
@@ -40,6 +48,9 @@ export default {
     grid-gap: 10px;
     grid-auto-rows: 500px;
 }
+
+/* this goes in the Album component */
+
 .albums li {
     list-style: none;
     text-align: center;
@@ -49,4 +60,5 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
 </style>

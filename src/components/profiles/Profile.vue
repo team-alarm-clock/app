@@ -1,18 +1,16 @@
 <template>
-  <div class="selected-features">
-    <section>
+  <section class="selected-features">
     <Loading :loading="loading"/>
-      <h2>MY FAVORITE ALBUM &amp; ARTISTS</h2>
-      <ul>
-        <FavoriteArtists v-for="favorite in favorites"
-          :favorite="favorite"
-          :key="favorite.album"
-          :onSelect="handleSelect"
-         />
-      </ul>
-    </section>
+    <h2>MY FAVORITE ALBUM &amp; ARTISTS</h2>
+    <ul>
+      <FavoriteArtists v-for="favorite in favorites"
+        :favorite="favorite"
+        :key="favorite.album"
+        :onSelect="handleSelect"
+        />
+    </ul>
     <RouterLink to="/search">Back to Search</RouterLink>
-  </div>
+  </section>
 </template>
 
 <script>

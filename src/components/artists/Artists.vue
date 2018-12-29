@@ -87,6 +87,8 @@ export default {
 </script>
 
 <style>
+/* there is no li in this component :( */
+/* move to component that actual has <li> */
 li {
   list-style: none;
 }

@@ -18,6 +18,12 @@ const getOptions = (method, data) => {
   return options;
 };
 
+// 1) Create a variable to not repeat this over and over
+// 2) You might want to update your discogs secret as it is avaiable in Github public repo,
+// though if no billable feature it may not matter...
+const DISCOGS_HEADERS = {
+  Authorization: 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
+};
 
 export default {
   signUp(profile) {
@@ -50,42 +56,12 @@ export default {
   setToken(t) {
     token = t;
   },
-  
-  getArtists(searchTerm) {
-    return fetch(`https://api.discogs.com/database/search?q=${encodeURIComponent(searchTerm)}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
-      }
-    })
-      .then(response => response.json());
-  },
-
-  getArtistDetail(id) {
-    return fetch(`https://api.discogs.com/artists/${id}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'
-      }
-    })
-      .then(response => response.json());
-  
-  },
-
-  getReleases(id) {
-    return fetch(`https://api.discogs.com/artists/${id}/releases?year,desc`, {
-      method: 'GET',
-      headers: {
-        'Authorization': 'Discogs key=ywNmMEUdTiredbCNzOTu, secret=uWhelbjFMNJQOBOXiuqGgiPJznmbsLJG'        
-      }
-    })
-      .then(response => response.json());
-  },
 
   getFavorites() {
     return fetch('/api/artists', getOptions('GET'))
       .then(response => response.json());
   },
+  
   saveRelease(release) {
     return fetch('/api/artists', getOptions('POST', release))
       .then(response => {
@@ -98,5 +74,31 @@ export default {
           });
       });
   },
+  
+  getArtists(searchTerm) {
+    return fetch(`https://api.discogs.com/database/search?q=${encodeURIComponent(searchTerm)}`, {
+      method: 'GET',
+      headers: DISCOGS_HEADERS
+    })
+      .then(response => response.json());
+  },
+
+  getArtistDetail(id) {
+    return fetch(`https://api.discogs.com/artists/${id}`, {
+      method: 'GET',
+      headers: DISCOGS_HEADERS
+    })
+      .then(response => response.json());
+  
+  },
+
+  getReleases(id) {
+    return fetch(`https://api.discogs.com/artists/${id}/releases?year,desc`, {
+      method: 'GET',
+      headers: DISCOGS_HEADERS
+    })
+      .then(response => response.json());
+  },
+
 };
 

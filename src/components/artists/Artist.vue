@@ -1,16 +1,10 @@
 <template>
-  <div>
-    <div v-if="displayArtist">
-      <h2>{{displayArtist.name}}</h2>
-      <img :src="displayArtist.images[0].uri" id="photo">
-      <p v-if="displayArtist.profile">{{displayArtist.profile}}</p>
-      <span v-if="displayArtist.images">
-      </span>
-    </div>
-    <div>
-      <AlbumList :releases="releases" />
-    </div>
-  </div>
+  <section v-if="displayArtist">
+    <h2>{{displayArtist.name}}</h2>
+    <img :src="displayArtist.images[0].uri" id="photo">
+    <p v-if="displayArtist.profile">{{displayArtist.profile}}</p>
+    <AlbumList :releases="releases" />
+  </section>
 </template>
 
 <script>
@@ -31,12 +25,16 @@ export default {
     AlbumList
   },
   created() {
+    // Both block and inline arrow function okay, but be consistent!
+
     api.getArtistDetail(this.artist.id)
-      .then(result => this.displayArtist = result); 
+      .then(result => {
+        this.displayArtist = result;
+      }); 
+
     api.getReleases(this.artist.id)
       .then(results => {
-        console.log('here', results);
-        return this.releases = results.releases;
+        this.releases = results.releases;
       });
   }
 };

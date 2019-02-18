@@ -32,7 +32,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Credits and Thank Yous
 
-Authors: Abel Quintero, Paige Gorry, Michael, Carmen Ramos
+Authors: Abel Quintero, Paige Gorry, Michael Elliott, Carmen Ramos
 
 Acknowledgements: All of the amazing TAs and instructors at Alchemy Code Lab
 
